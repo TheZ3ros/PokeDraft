@@ -242,7 +242,7 @@
             padding: 15px 40px;
             background: linear-gradient(180deg, #fbbf24 0%, #f59e0b 100%);
             border: 3px solid #000;
-            border-radius: 12px;
+            border-radius: 12px;script
             font-size: 1.1em;
             font-weight: bold;
             cursor: pointer;
@@ -945,6 +945,11 @@
                     <input type="number" id="settingStats" value="400" min="0" max="800">
                 </div>
 
+                <div class="form-group">
+                    <label>Massimo Base Stats (BST)</label>
+                    <input type="number" id="settingMaxStats" value="800" min="0" max="800">
+                </div>
+
                 <div class="form-group" style="display:flex; gap:10px;">
                     <div style="flex:1;">
                         <label>Min EV Totali</label>
@@ -1161,10 +1166,14 @@
         ];
 
         // CONFIGURAZIONE DINAMICA
-        // Puoi cambiare questi valori
+        // Valori standard modificabili: cambia qui se vuoi impostare default diversi
+        const DEFAULT_MIN_BST = 0; // valore standard minimo BST
+        const DEFAULT_MAX_BST = 800; // valore standard massimo BST
+
         let CONFIG = {
             maxGeneration: 3,     // Fino alla 3a generazione
-            minBaseStats: 400,    // Somma statistiche base minima
+            minBaseStats: DEFAULT_MIN_BST,    // Somma statistiche base minima
+            maxBaseStats: DEFAULT_MAX_BST,    // Somma statistiche base massima
             allowLegendaries: false,
             onlyFullyEvolved: true,
             legalMovesOnly: false, // Default: FALSE (Chaos Mode)
@@ -1194,7 +1203,7 @@
         let reserveBuffer = []; // Coda di nuovi pokemon pronti a entrare
 
         function updateCacheKey() {
-            CACHE_KEY = `valid_pkm_g${CONFIG.maxGeneration}_s${CONFIG.minBaseStats}_l${CONFIG.allowLegendaries}_fe${CONFIG.onlyFullyEvolved}`;
+            CACHE_KEY = `valid_pkm_g${CONFIG.maxGeneration}_s${CONFIG.minBaseStats}_S${CONFIG.maxBaseStats}_l${CONFIG.allowLegendaries}_fe${CONFIG.onlyFullyEvolved}`;
             // Move setting doesn't affect pokemon cache, so no need to change key for `legalMovesOnly`
         }
 
@@ -1242,6 +1251,7 @@
         function openSettings(force = false) {
             document.getElementById('settingGen').value = CONFIG.maxGeneration;
             document.getElementById('settingStats').value = CONFIG.minBaseStats;
+            document.getElementById('settingMaxStats').value = CONFIG.maxBaseStats || 800;
             document.getElementById('settingLegendaries').checked = CONFIG.allowLegendaries;
             document.getElementById('settingFullyEvolved').checked = CONFIG.onlyFullyEvolved;
             document.getElementById('settingLegalMoves').checked = CONFIG.legalMovesOnly;
@@ -1264,14 +1274,64 @@
 
         async function saveSettings() {
             CONFIG.maxGeneration = parseInt(document.getElementById('settingGen').value);
-            CONFIG.minBaseStats = parseInt(document.getElementById('settingStats').value);
+            // Read BST bounds; if fields are empty use defaults, otherwise validate strictly
+            const rawMin = String(document.getElementById('settingStats').value).trim();
+            const rawMax = String(document.getElementById('settingMaxStats').value).trim();
+
+            let minBs, maxBs;
+            if (rawMin === '') minBs = DEFAULT_MIN_BST; else minBs = parseInt(rawMin);
+            if (rawMax === '') maxBs = DEFAULT_MAX_BST; else maxBs = parseInt(rawMax);
+
+            // Validate numeric and ranges
+            if (!Number.isInteger(minBs) || !Number.isInteger(maxBs)) {
+                alert('Errore impostazioni: Min BST e Max BST devono essere numeri interi (lascia vuoto per usare i default).');
+                return;
+            }
+            if (minBs < 0 || minBs > 800 || maxBs < 0 || maxBs > 800) {
+                alert('Errore impostazioni: BST deve essere compreso tra 0 e 800.');
+                return;
+            }
+            if (minBs > maxBs) {
+                alert('Errore impostazioni: Min BST non può essere maggiore del Max BST. Correggi i valori.');
+                return;
+            }
+
+            CONFIG.minBaseStats = minBs;
+            CONFIG.maxBaseStats = maxBs;
             CONFIG.allowLegendaries = document.getElementById('settingLegendaries').checked;
             CONFIG.onlyFullyEvolved = document.getElementById('settingFullyEvolved').checked;
             CONFIG.legalMovesOnly = document.getElementById('settingLegalMoves').checked;
             CONFIG.teamSize = parseInt(document.getElementById('settingTeamSize').value);
             CONFIG.defaultLevel = parseInt(document.getElementById('settingLevel').value) || 50;
-            CONFIG.minTotalEVs = parseInt(document.getElementById('settingMinEVs').value) || 510;
-            CONFIG.maxTotalEVs = parseInt(document.getElementById('settingMaxEVs').value) || 510;
+            // Validate team size, level and EVs
+            if (!Number.isInteger(CONFIG.teamSize) || CONFIG.teamSize < 1 || CONFIG.teamSize > 6) {
+                alert('Errore impostazioni: Dimensione squadra deve essere un intero tra 1 e 6.');
+                return;
+            }
+            const minEvsRaw = String(document.getElementById('settingMinEVs').value).trim();
+            const maxEvsRaw = String(document.getElementById('settingMaxEVs').value).trim();
+            let minEvs = minEvsRaw === '' ? 510 : parseInt(minEvsRaw);
+            let maxEvs = maxEvsRaw === '' ? 510 : parseInt(maxEvsRaw);
+            if (!Number.isInteger(minEvs) || !Number.isInteger(maxEvs)) {
+                alert('Errore impostazioni: EV Totali devono essere numeri interi (0-510).');
+                return;
+            }
+            if (minEvs < 0 || minEvs > 510 || maxEvs < 0 || maxEvs > 510) {
+                alert('Errore impostazioni: EV Totali devono essere compresi tra 0 e 510.');
+                return;
+            }
+            if (minEvs > maxEvs) {
+                alert('Errore impostazioni: Min EV Totali non può essere maggiore del Max EV Totali.');
+                return;
+            }
+            CONFIG.minTotalEVs = minEvs;
+            CONFIG.maxTotalEVs = maxEvs;
+
+            // Validate level
+            if (!Number.isInteger(CONFIG.defaultLevel) || CONFIG.defaultLevel < 1 || CONFIG.defaultLevel > 100) {
+                alert('Errore impostazioni: Livello Export deve essere un intero tra 1 e 100.');
+                return;
+            }
 
             saveConfig(); // Save to persistent storage
             updateCacheKey();
@@ -1452,7 +1512,7 @@ FUNZIONE DI INIZIALIZZAZIONE DATABASE CON UI AVANZATA
                             const pkm = await res.json();
                             const bst = pkm.stats.reduce((acc, s) => acc + s.base_stat, 0);
 
-                            if (bst >= CONFIG.minBaseStats) {
+                            if (bst >= CONFIG.minBaseStats && bst <= (CONFIG.maxBaseStats || 800)) {
                                 finalPokemonIds.push(pkm.id);
                             }
                         }
