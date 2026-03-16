@@ -17,8 +17,7 @@
         }
 
         body {
-            font-family: 'Arial',
-                sans-serif;
+            font-family: 'Arial', sans-serif;
             background: linear-gradient(180deg, #5ba3d0 0%, #4a8bb8 100%);
             min-height: 100vh;
             display: flex;
@@ -48,17 +47,12 @@
             gap: 15px;
         }
 
-        .title h1 {
-            color: #ffd700;
-            text-shadow:
-                -2px -2px 0 #000,
-                2px -2px 0 #000,
-                -2px 2px 0 #000,
-                2px 2px 0 #000,
-                3px 3px 0 #ff6b35;
-            font-size: 2em;
-            font-weight: bold;
-        }
+            .title h1 {
+                color: #ffd700;
+                text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 3px 3px 0 #ff6b35;
+                font-size: 2em;
+                font-weight: bold;
+            }
 
         .pokeball-icon {
             width: 40px;
@@ -69,18 +63,18 @@
             position: relative;
         }
 
-        .pokeball-icon::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 12px;
-            height: 12px;
-            background: white;
-            border: 3px solid #000;
-            border-radius: 50%;
-        }
+            .pokeball-icon::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 12px;
+                height: 12px;
+                background: white;
+                border: 3px solid #000;
+                border-radius: 50%;
+            }
 
         .pokemon-grid {
             display: grid;
@@ -100,39 +94,39 @@
             position: relative;
         }
 
-        .pokemon-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
+            .pokemon-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            }
 
-        .pokemon-card.selected {
-            background: linear-gradient(180deg, #60a5fa 0%, #60a5fa 55%, white 55%, white 100%);
-        }
+            .pokemon-card.selected {
+                background: linear-gradient(180deg, #60a5fa 0%, #60a5fa 55%, white 55%, white 100%);
+            }
 
-        .pokemon-card::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 10%;
-            right: 10%;
-            height: 4px;
-            background: #000;
-            transform: translateY(-50%);
-        }
+            .pokemon-card::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 10%;
+                right: 10%;
+                height: 4px;
+                background: #000;
+                transform: translateY(-50%);
+            }
 
-        .pokemon-card::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 30px;
-            height: 30px;
-            background: white;
-            border: 4px solid #000;
-            border-radius: 50%;
-            z-index: 1;
-        }
+            .pokemon-card::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 30px;
+                height: 30px;
+                background: white;
+                border: 4px solid #000;
+                border-radius: 50%;
+                z-index: 1;
+            }
 
         .pokemon-sprite {
             width: 120px;
@@ -188,31 +182,31 @@
             position: relative;
         }
 
-        .team-slot.filled {
-            background: #fff;
-            border-color: #2b6cb0;
-        }
+            .team-slot.filled {
+                background: #fff;
+                border-color: #2b6cb0;
+            }
 
-        .team-slot img {
-            width: 80px;
-            height: 80px;
-            image-rendering: pixelated;
-        }
+            .team-slot img {
+                width: 80px;
+                height: 80px;
+                image-rendering: pixelated;
+            }
 
-        .team-slot .name {
-            font-size: 0.9em;
-            font-weight: bold;
-            text-transform: capitalize;
-            margin-bottom: 5px;
-        }
+            .team-slot .name {
+                font-size: 0.9em;
+                font-weight: bold;
+                text-transform: capitalize;
+                margin-bottom: 5px;
+            }
 
-        .team-slot.empty {
-            color: #ccc;
-            font-size: 2em;
-            justify-content: center;
-            /* Center ? vertically */
-            min-height: 160px;
-        }
+            .team-slot.empty {
+                color: #ccc;
+                font-size: 2em;
+                justify-content: center;
+                /* Center ? vertically */
+                min-height: 160px;
+            }
 
         .team-moves-mini {
             display: flex;
@@ -233,14 +227,14 @@
             border: 1px solid rgba(0, 0, 0, 0.2);
             word-wrap: break-word; /* Permette al testo lungo di andare a capo invece di tagliarlo */
         }
-        
-        /* Stile specifico per gli slot mosse vuoti */
-        .mini-move.empty-move {
-            background: #f8f9fa;
-            color: #a0aec0;
-            text-shadow: none;
-            border: 1px dashed #cbd5e0;
-        }
+
+            /* Stile specifico per gli slot mosse vuoti */
+            .mini-move.empty-move {
+                background: #f8f9fa;
+                color: #a0aec0;
+                text-shadow: none;
+                border: 1px dashed #cbd5e0;
+            }
 
         .reset-btn {
             display: block;
@@ -257,15 +251,15 @@
             box-shadow: 0 4px 0 #d97706;
         }
 
-        .reset-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 0 #d97706;
-        }
+            .reset-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 0 #d97706;
+            }
 
-        .reset-btn:active {
-            transform: translateY(2px);
-            box-shadow: 0 2px 0 #d97706;
-        }
+            .reset-btn:active {
+                transform: translateY(2px);
+                box-shadow: 0 2px 0 #d97706;
+            }
 
         .loading {
             text-align: center;
@@ -300,10 +294,10 @@
             box-shadow: 0 4px 0 #000;
         }
 
-        .settings-btn:active {
-            transform: translateY(2px);
-            box-shadow: 0 2px 0 #000;
-        }
+            .settings-btn:active {
+                transform: translateY(2px);
+                box-shadow: 0 2px 0 #000;
+            }
 
         .modal-overlay {
             position: fixed;
@@ -318,9 +312,9 @@
             z-index: 1000;
         }
 
-        .modal-overlay.active {
-            display: flex;
-        }
+            .modal-overlay.active {
+                display: flex;
+            }
 
         .modal-content {
             background: white;
@@ -334,24 +328,24 @@
             overflow-y: auto;
         }
 
-        /* Personalizzazione della barra di scorrimento per il modale */
-        .modal-content::-webkit-scrollbar {
-            width: 8px;
-        }
+            /* Personalizzazione della barra di scorrimento per il modale */
+            .modal-content::-webkit-scrollbar {
+                width: 8px;
+            }
 
-        .modal-content::-webkit-scrollbar-track {
-            background: #f1f1f1; 
-            border-radius: 10px;
-        }
-        
-        .modal-content::-webkit-scrollbar-thumb {
-            background: #cbd5e0; 
-            border-radius: 10px;
-        }
+            .modal-content::-webkit-scrollbar-track {
+                background: #f1f1f1;
+                border-radius: 10px;
+            }
 
-        .modal-content::-webkit-scrollbar-thumb:hover {
-            background: #a0aec0; 
-        }
+            .modal-content::-webkit-scrollbar-thumb {
+                background: #cbd5e0;
+                border-radius: 10px;
+            }
+
+                .modal-content::-webkit-scrollbar-thumb:hover {
+                    background: #a0aec0;
+                }
 
         .modal-title {
             text-align: center;
@@ -396,10 +390,10 @@
             height: 100%;
         }
 
-        .move-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
-        }
+            .move-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+            }
 
         .move-header {
             font-weight: 800;
@@ -455,14 +449,14 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .proceed-btn:hover {
-            background: #2b6cb0;
-        }
+            .proceed-btn:hover {
+                background: #2b6cb0;
+            }
 
-        .proceed-btn:disabled {
-            background: #a0aec0;
-            cursor: not-allowed;
-        }
+            .proceed-btn:disabled {
+                background: #a0aec0;
+                cursor: not-allowed;
+            }
 
         /* Modal etc... */
 
@@ -470,39 +464,39 @@
             margin-bottom: 15px;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #4a5568;
-        }
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+                color: #4a5568;
+            }
 
-        .form-group select,
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            border: 2px solid #cbd5e0;
-            border-radius: 6px;
-        }
+            .form-group select,
+            .form-group input {
+                width: 100%;
+                padding: 8px;
+                border: 2px solid #cbd5e0;
+                border-radius: 6px;
+            }
 
-        .form-group.checkbox-row {
-            display: flex;
-            align-items: center;
-        }
+            .form-group.checkbox-row {
+                display: flex;
+                align-items: center;
+            }
 
-        .form-group.checkbox-row label {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            margin-bottom: 0;
-            font-weight: bold;
-        }
+                .form-group.checkbox-row label {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    cursor: pointer;
+                    margin-bottom: 0;
+                    font-weight: bold;
+                }
 
-        .form-group.checkbox-row input {
-            width: auto;
-            margin: 0;
-        }
+                .form-group.checkbox-row input {
+                    width: auto;
+                    margin: 0;
+                }
 
         .modal-actions {
             display: flex;
@@ -552,24 +546,24 @@
             overflow: hidden;
         }
 
-        .nature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            border-color: #3498db;
-        }
+            .nature-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                border-color: #3498db;
+            }
 
-        /* Sfondo decorativo pokeball sfumata */
-        .nature-card::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            width: 100px;
-            height: 100px;
-            background: rgba(0, 0, 0, 0.05);
-            border-radius: 50%;
-            z-index: 0;
-        }
+            /* Sfondo decorativo pokeball sfumata */
+            .nature-card::before {
+                content: '';
+                position: absolute;
+                top: -20px;
+                right: -20px;
+                width: 100px;
+                height: 100px;
+                background: rgba(0, 0, 0, 0.05);
+                border-radius: 50%;
+                z-index: 0;
+            }
 
         .nature-name {
             font-size: 1.8em;
@@ -648,11 +642,11 @@
             gap: 8px;
         }
 
-        .ev-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
-            border-color: #4299e1;
-        }
+            .ev-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+                border-color: #4299e1;
+            }
 
         .ev-header {
             font-weight: bold;
@@ -751,11 +745,11 @@
             position: relative;
         }
 
-        .item-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            border-color: #b7791f;
-        }
+            .item-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                border-color: #b7791f;
+            }
 
         .item-name {
             font-size: 1.4em;
@@ -850,14 +844,14 @@
             transition: background 0.2s, transform 0.1s;
         }
 
-        .selectable-ability:hover {
-            background: #e2e8f0;
-            transform: scale(1.02);
-        }
+            .selectable-ability:hover {
+                background: #e2e8f0;
+                transform: scale(1.02);
+            }
 
-        .selectable-ability:active {
-            transform: scale(0.98);
-        }
+            .selectable-ability:active {
+                transform: scale(0.98);
+            }
 
         /* --- STILI PER IL MODALE DELLE STATISTICHE --- */
         .stat-row-modal {
@@ -901,18 +895,18 @@
             padding-bottom: 10px;
         }
 
-        .modal-header-stats img {
-            width: 90px;
-            height: 90px;
-            image-rendering: pixelated;
-        }
+            .modal-header-stats img {
+                width: 90px;
+                height: 90px;
+                image-rendering: pixelated;
+            }
 
-        .modal-header-stats h3 {
-            text-transform: capitalize;
-            margin: 0;
-            color: #2c3e50;
-            font-size: 1.5em;
-        }
+            .modal-header-stats h3 {
+                text-transform: capitalize;
+                margin: 0;
+                color: #2c3e50;
+                font-size: 1.5em;
+            }
     </style>
 </head>
 
@@ -1018,7 +1012,7 @@
         <div class="modal-overlay" id="statsModal" onclick="closeStatsModal()">
             <div class="modal-content" style="max-width: 350px;" onclick="event.stopPropagation()">
                 <div id="statsModalContent">
-                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -1302,8 +1296,8 @@
         }
 
         /* --------------------------------------------------------------------------
-   FUNZIONE DI INIZIALIZZAZIONE DATABASE CON UI AVANZATA
-   -------------------------------------------------------------------------- */
+FUNZIONE DI INIZIALIZZAZIONE DATABASE CON UI AVANZATA
+-------------------------------------------------------------------------- */
 
         async function buildValidPokemonList() {
             const gridDiv = document.getElementById('pokemonGrid');
@@ -1312,33 +1306,33 @@
             const badgeStyle = "background:#edf2f7; color:#2d3748; padding:4px 8px; border-radius:4px; font-size:0.85em; font-weight:bold; border:1px solid #cbd5e0;";
 
             gridDiv.innerHTML = `
-        <div class="loading" style="max-width:600px; margin:0 auto;">
-            <h2 style="color:#2c3e50; margin-bottom:15px;">Costruzione Database Locale</h2>
-            
-            <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:20px;">
-                <span style="${badgeStyle}">Gen: 1-${CONFIG.maxGeneration}</span>
-                <span style="${badgeStyle}">Min BST: ${CONFIG.minBaseStats}</span>
-                <span style="${badgeStyle}">Team: ${CONFIG.teamSize}</span>
-                <span style="${badgeStyle}">Fully Evolved: ${CONFIG.onlyFullyEvolved ? '✅' : '❌'}</span>
-                <span style="${badgeStyle}">Leggendari: ${CONFIG.allowLegendaries ? '✅' : '❌'}</span>
-            </div>
+            <div class="loading" style="max-width:600px; margin:0 auto;">
+                <h2 style="color:#2c3e50; margin-bottom:15px;">Costruzione Database Locale</h2>
 
-            <div style="text-align:left; margin-bottom:5px; color:#555; font-weight:bold;" id="phaseLabel">Avvio inizializzazione...</div>
-            
-            <div style="width:100%; background:#eee; height:20px; border-radius:10px; overflow:hidden; border:1px solid #ccc; margin-bottom:10px;">
-                <div id="progressBar" style="width:0%; height:100%; background:linear-gradient(90deg, #3498db, #2ecc71); transition:width 0.1s;"></div>
+                <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:20px;">
+                    <span style="${badgeStyle}">Gen: 1-${CONFIG.maxGeneration}</span>
+                    <span style="${badgeStyle}">Min BST: ${CONFIG.minBaseStats}</span>
+                    <span style="${badgeStyle}">Team: ${CONFIG.teamSize}</span>
+                    <span style="${badgeStyle}">Fully Evolved: ${CONFIG.onlyFullyEvolved ? '✅' : '❌'}</span>
+                    <span style="${badgeStyle}">Leggendari: ${CONFIG.allowLegendaries ? '✅' : '❌'}</span>
+                </div>
+
+                <div style="text-align:left; margin-bottom:5px; color:#555; font-weight:bold;" id="phaseLabel">Avvio inizializzazione...</div>
+
+                <div style="width:100%; background:#eee; height:20px; border-radius:10px; overflow:hidden; border:1px solid #ccc; margin-bottom:10px;">
+                    <div id="progressBar" style="width:0%; height:100%; background:linear-gradient(90deg, #3498db, #2ecc71); transition:width 0.1s;"></div>
+                </div>
+
+                <div style="display:flex; justify-content:space-between; font-size:0.9em; color:#666;">
+                    <span id="progressCount">0/0</span>
+                    <span id="progressPercent">0%</span>
+                </div>
+
+                <p style="font-size:0.8em; color:#888; margin-top:15px;">
+                    🚀 Modalità Turbo attiva
+                </p>
             </div>
-            
-            <div style="display:flex; justify-content:space-between; font-size:0.9em; color:#666;">
-                <span id="progressCount">0/0</span>
-                <span id="progressPercent">0%</span>
-            </div>
-            
-            <p style="font-size:0.8em; color:#888; margin-top:15px;">
-                🚀 Modalità Turbo attiva
-            </p>
-        </div>
-    `;
+        `;
 
             // Riferimenti DOM per aggiornamenti rapidi
             const elPhase = document.getElementById('phaseLabel');
@@ -1495,10 +1489,10 @@
         }
 
         /* ----------------------------------------------------------------
-   HELPER CONCORRENZA (Versione Corretta e Unica)
-   Esegue una lista di items in parallelo con un limite massimo
-   di richieste simultanee.
-   ---------------------------------------------------------------- */
+HELPER CONCORRENZA (Versione Corretta e Unica)
+Esegue una lista di items in parallelo con un limite massimo
+di richieste simultanee.
+---------------------------------------------------------------- */
         async function runWithConcurrency(array, asyncFn, concurrency) {
             const results = new Array(array.length);
             let index = 0;
@@ -1691,13 +1685,13 @@
                 if (p) {
                     fillCardContent(card, p);
                     card.onclick = () => handleSelection(index);
-                            
+
                     // --- NUOVO: Aggiungiamo il click col tasto destro ---
                     card.oncontextmenu = (event) => {
                         event.preventDefault(); // Evita che si apra il classico menù di Chrome/Windows
                         openStatsModal(p);
                     };
-                            
+
                 } else {
                     card.innerHTML = '<div class="loading">...</div>';
                 }
@@ -1800,9 +1794,9 @@
                     sprite: data.sprites.front_default,
                     types: data.types.map(t => t.type.name),
                     moves: data.moves,
-                    abilities: validAbilities, 
-                    currentAbilityIndex: 0,    
-                    bst: bst,                  
+                    abilities: validAbilities,
+                    currentAbilityIndex: 0,
+                    bst: bst,
                     individualStats: individualStats // <-- Salviamo le statistiche singole qui
                 };
             } catch (e) {
@@ -1985,13 +1979,16 @@
 
             // GLOBAL UNIQUENESS: Check moves from ALL team members
             const usedSlugs = new Set();
+            const bannedSubstrings = [ , 'z-', 'max-']; // personalizza qui le sottostringhe da escludere
+
             team.forEach(p => {
-                if (p.selectedMoves) {
-                    p.selectedMoves.forEach(m => {
-                        if (m.originalName) usedSlugs.add(m.originalName);
-                        else usedSlugs.add(m.name);
-                    });
-                }
+                if (!p.selectedMoves) return;
+                p.selectedMoves.forEach(m => {
+                    const slug = (m.originalName || m.name || '').toLowerCase();
+                    // salta le mosse che contengono una sottostringa vietata
+                    if (bannedSubstrings.some(sub => slug.includes(sub))) return;
+                    usedSlugs.add(m.originalName || m.name);
+                });
             });
 
             // OPTIMIZED LEARNSET VALIDATION
@@ -2076,7 +2073,7 @@
             for (const url of uniquePicks) {
                 if (details.length >= count) break; // DONE
 
-                    try {
+                try {
                     const res = await fetch(url);
                     const d = await res.json();
 
@@ -2096,7 +2093,7 @@
 
                     // Trova traduzione italiana o usa nome base
                     let name = d.names.find(n => n.language.name === 'it')?.name || d.name;
-                    
+
                     // Trova descrizione
                     const entry = d.flavor_text_entries.find(f => f.language.name === 'it')
                         || d.flavor_text_entries.find(f => f.language.name === 'en');
@@ -2144,17 +2141,17 @@
                 if (m.damageClassEn === "special") dmgColor = "#4c51bf"; // Indaco/Viola per mosse Speciali
 
                 card.innerHTML = `
-                    <div class="move-header" style="color:${typeColorStr}">${m.name}</div>
-                    <div class="move-stats">
-                        <span>POT: ${m.power}</span>
-                        <span>PREC: ${m.accuracy}</span>
-                    </div>
-                    <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 10px;">
-                        <span class="move-type" style="background:${typeColorStr}; margin: 0;">${m.type}</span>
-                        <span class="move-type" style="background:${dmgColor}; margin: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">${m.damageClass}</span>
-                    </div>
-                    <div class="move-desc">${m.desc}</div>
-                `;
+                        <div class="move-header" style="color:${typeColorStr}">${m.name}</div>
+                        <div class="move-stats">
+                            <span>POT: ${m.power}</span>
+                            <span>PREC: ${m.accuracy}</span>
+                        </div>
+                        <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 10px;">
+                            <span class="move-type" style="background:${typeColorStr}; margin: 0;">${m.type}</span>
+                            <span class="move-type" style="background:${dmgColor}; margin: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">${m.damageClass}</span>
+                        </div>
+                        <div class="move-desc">${m.desc}</div>
+                    `;
 
                 card.onclick = () => selectMove(m);
                 grid.appendChild(card);
@@ -2165,9 +2162,9 @@
 
         function fillCardContent(card, p) {
             card.dataset.pokemonId = p.id;
-            
+
             // Generazione HTML dei Tipi
-            const typesHtml = p.types.map(t => 
+            const typesHtml = p.types.map(t =>
                 `<span class="type-badge" style="background: var(--type-${t}, #aaa);">${t}</span>`
             ).join('');
 
@@ -2175,24 +2172,24 @@
             const currentAbility = p.abilities[p.currentAbilityIndex];
 
             card.innerHTML = `
-                <div class="pokemon-bst">BST: ${p.bst}</div>
-                <img src="${p.sprite}" class="pokemon-sprite" alt="${p.name}">
-                <div class="pokemon-name">${p.name}</div>
-                <div class="pokemon-types">${typesHtml}</div>
-                <div class="pokemon-ability selectable-ability" title="Clicca per ciclare le abilità">
-                    Abilità: <span>${currentAbility.name}</span> <span style="font-size:0.8em; opacity:0.7;">🔄</span>
-                </div>
-            `;
+                    <div class="pokemon-bst">BST: ${p.bst}</div>
+                    <img src="${p.sprite}" class="pokemon-sprite" alt="${p.name}">
+                    <div class="pokemon-name">${p.name}</div>
+                    <div class="pokemon-types">${typesHtml}</div>
+                    <div class="pokemon-ability selectable-ability" title="Clicca per ciclare le abilità">
+                        Abilità: <span>${currentAbility.name}</span> <span style="font-size:0.8em; opacity:0.7;">🔄</span>
+                    </div>
+                `;
 
             // Rende l'abilità cliccabile in modo indipendente dalla carta
             const abilityBtn = card.querySelector('.selectable-ability');
             abilityBtn.onclick = (e) => {
                 e.stopPropagation(); // Evita che il click selezioni il Pokémon per la squadra
                 if (document.body.dataset.processing === "true") return;
-                
+
                 // Cicla all'abilità successiva
                 p.currentAbilityIndex = (p.currentAbilityIndex + 1) % p.abilities.length;
-                
+
                 // Aggiorna visivamente il testo
                 abilityBtn.querySelector('span').textContent = p.abilities[p.currentAbilityIndex].name;
                 saveSession();
@@ -2296,14 +2293,14 @@
                     let movesHtml = '<div class="team-moves-mini">';
                     for (let m = 0; m < 4; m++) {
                         const moveObj = p.selectedMoves && p.selectedMoves[m] ? p.selectedMoves[m] : null;
-                        
+
                         if (moveObj) {
                             // Se c'è una mossa, prendiamo il nome e il tipo
                             const moveName = moveObj.name;
                             const moveType = moveObj.type;
                             // Usiamo la variabile CSS del tipo (es. --type-fire), con un grigio come fallback
-                            const bgColor = `var(--type-${moveType}, #aaa)`; 
-                            
+                            const bgColor = `var(--type-${moveType}, #aaa)`;
+
                             movesHtml += `<div class="mini-move" style="background: ${bgColor};" title="${moveName}">${moveName}</div>`;
                         } else {
                             // Se lo slot è vuoto, usiamo lo stile "empty-move"
@@ -2343,42 +2340,42 @@
                     if (p.item) {
                         if (p.item.sprite) {
                             itemHtml = `<div class="team-item-mini" title="${p.item.name} - ${p.item.desc}">
-                                <img src="${p.item.sprite}" style="width:24px; height:24px; image-rendering:pixelated; margin-right:4px;">
-                                <span class="mini-item-text" style="font-size:0.7em;">${p.item.name}</span>
-                            </div>`;
+                                    <img src="${p.item.sprite}" style="width:24px; height:24px; image-rendering:pixelated; margin-right:4px;">
+                                    <span class="mini-item-text" style="font-size:0.7em;">${p.item.name}</span>
+                                </div>`;
                         } else {
                             itemHtml = `<div class="team-item-mini"><span class="mini-item-text" title="${p.item.desc}">${p.item.name}</span></div>`;
                         }
                     }
 
-                // Gestione Abilità nel Team
-                let currentAbName = '-';
-                if (p.abilities && p.abilities.length > 0) {
-                    currentAbName = p.abilities[p.currentAbilityIndex].name;
-                }
+                    // Gestione Abilità nel Team
+                    let currentAbName = '-';
+                    if (p.abilities && p.abilities.length > 0) {
+                        currentAbName = p.abilities[p.currentAbilityIndex].name;
+                    }
 
-                const abilityDivHtml = `<div class="team-ability-btn" style="cursor:pointer; font-size:0.7em; color:#fff; background:rgba(0,0,0,0.5); padding:2px; border-radius:4px; margin:2px 0; transition:0.2s;" title="Clicca per cambiare abilità">Abil: <span>${currentAbName}</span> 🔄</div>`;
+                    const abilityDivHtml = `<div class="team-ability-btn" style="cursor:pointer; font-size:0.7em; color:#fff; background:rgba(0,0,0,0.5); padding:2px; border-radius:4px; margin:2px 0; transition:0.2s;" title="Clicca per cambiare abilità">Abil: <span>${currentAbName}</span> 🔄</div>`;
 
-                slot.innerHTML = `
-                    <img src="${p.sprite}">
-                    <div class="name">${p.name}</div>
-                    ${abilityDivHtml}
-                    ${natureHtml}
-                    ${evHtml}
-                    ${itemHtml}
-                    ${movesHtml}
-                `;
+                    slot.innerHTML = `
+                        <img src="${p.sprite}">
+                        <div class="name">${p.name}</div>
+                        ${abilityDivHtml}
+                        ${natureHtml}
+                        ${evHtml}
+                        ${itemHtml}
+                        ${movesHtml}
+                    `;
 
-                // Aggiungiamo l'evento click all'abilità anche dentro la squadra
-                const teamAbBtn = slot.querySelector('.team-ability-btn');
-                if (teamAbBtn && p.abilities && p.abilities.length > 1) {
-                    teamAbBtn.onclick = (e) => {
-                        e.stopPropagation();
-                        p.currentAbilityIndex = (p.currentAbilityIndex + 1) % p.abilities.length;
-                        teamAbBtn.querySelector('span').textContent = p.abilities[p.currentAbilityIndex].name;
-                        saveSession();
-                    };
-                }
+                    // Aggiungiamo l'evento click all'abilità anche dentro la squadra
+                    const teamAbBtn = slot.querySelector('.team-ability-btn');
+                    if (teamAbBtn && p.abilities && p.abilities.length > 1) {
+                        teamAbBtn.onclick = (e) => {
+                            e.stopPropagation();
+                            p.currentAbilityIndex = (p.currentAbilityIndex + 1) % p.abilities.length;
+                            teamAbBtn.querySelector('span').textContent = p.abilities[p.currentAbilityIndex].name;
+                            saveSession();
+                        };
+                    }
 
                 } else {
                     slot.className = 'team-slot empty';
@@ -2410,8 +2407,8 @@
         }
 
         /* -------------------------------------------------------------
-   LOGICA SELEZIONE NATURA
-   ------------------------------------------------------------- */
+LOGICA SELEZIONE NATURA
+------------------------------------------------------------- */
         let natureOptions = []; // Buffer per le opzioni a schermo
 
         function startNatureSelection(resume = false) {
@@ -2493,21 +2490,21 @@
                     tagsHtml = `<div class="nature-tag tag-neutral">Neutrale</div>`;
                 } else {
                     tagsHtml = `
-                <div class="nature-tag tag-up">
-                    ${nature.up} <span>▲</span>
-                </div>
-                <div class="nature-tag tag-down">
-                    ${nature.down} <span>▼</span>
-                </div>
-            `;
+                    <div class="nature-tag tag-up">
+                        ${nature.up} <span>▲</span>
+                    </div>
+                    <div class="nature-tag tag-down">
+                        ${nature.down} <span>▼</span>
+                    </div>
+                `;
                 }
 
                 card.innerHTML = `
-            <div class="nature-name">${nature.name}</div>
-            <div class="nature-tags">
-                ${tagsHtml}
-            </div>
-        `;
+                <div class="nature-name">${nature.name}</div>
+                <div class="nature-tags">
+                    ${tagsHtml}
+                </div>
+            `;
 
                 card.onclick = () => selectNature(nature);
                 grid.appendChild(card);
@@ -2533,10 +2530,10 @@
         function finishGame() {
             document.querySelector('.title h1').textContent = "Squadra Completata!";
             grid.innerHTML = `<div class="loading" style="color:green; font-weight:bold; font-size:1.5em;">
-                🎉 Squadra Completa! 🎉
-                <div style="font-size:0.6em; color:#555; margin-top:10px">Sei pronto per l'avventura!</div>
-                <button class="proceed-btn" style="margin-top:20px; background:#48bb78;" onclick="downloadTeam()">📥 Scarica Team (PKHeX)</button>
-            </div>`;
+                    🎉 Squadra Completa! 🎉
+                    <div style="font-size:0.6em; color:#555; margin-top:10px">Sei pronto per l'avventura!</div>
+                    <button class="proceed-btn" style="margin-top:20px; background:#48bb78;" onclick="downloadTeam()">📥 Scarica Team (PKHeX)</button>
+                </div>`;
             updateTeamDisplay();
         }
 
@@ -2740,26 +2737,26 @@
                 const renderBar = (label, val, color) => {
                     const widthPct = (val / 252) * 100;
                     return `
-                    <div class="ev-stat-row">
-                        <div class="ev-stat-label">${label}</div>
-                        <div class="ev-stat-bar-bg">
-                            <div class="ev-stat-bar" style="width:${widthPct}%; background:${color};"></div>
+                        <div class="ev-stat-row">
+                            <div class="ev-stat-label">${label}</div>
+                            <div class="ev-stat-bar-bg">
+                                <div class="ev-stat-bar" style="width:${widthPct}%; background:${color};"></div>
+                            </div>
+                            <div class="ev-stat-val">${val}</div>
                         </div>
-                        <div class="ev-stat-val">${val}</div>
-                    </div>
-                    `;
+                        `;
                 };
 
                 // Colors: HP Green, Atk Red, Def Blue, SpA Purple, SpD Pink, Spe Orange
                 card.innerHTML = `
-                    <div class="ev-header">Gruppo Statistiche</div>
-                    ${renderBar('PS', opt.hp, '#48bb78')}
-                    ${renderBar('Atk', opt.atk, '#f56565')}
-                    ${renderBar('Dif', opt.def, '#4299e1')}
-                    ${renderBar('SpA', opt.spa, '#9f7aea')}
-                    ${renderBar('SpD', opt.spd, '#ed64a6')}
-                    ${renderBar('Vel', opt.spe, '#ed8936')}
-                `;
+                        <div class="ev-header">Gruppo Statistiche</div>
+                        ${renderBar('PS', opt.hp, '#48bb78')}
+                        ${renderBar('Atk', opt.atk, '#f56565')}
+                        ${renderBar('Dif', opt.def, '#4299e1')}
+                        ${renderBar('SpA', opt.spa, '#9f7aea')}
+                        ${renderBar('SpD', opt.spd, '#ed64a6')}
+                        ${renderBar('Vel', opt.spe, '#ed8936')}
+                    `;
 
                 grid.appendChild(card);
             });
@@ -2890,11 +2887,11 @@
                 card.onclick = () => selectItem(item);
 
                 card.innerHTML = `
-                    <div class="item-badge">${item.type}</div>
-                    ${item.sprite ? `<img src="${item.sprite}" style="width:64px; height:64px; image-rendering:pixelated; margin-bottom:10px;">` : ''}
-                    <div class="item-name">${item.name}</div>
-                    <div class="item-desc">${item.desc}</div>
-                `;
+                        <div class="item-badge">${item.type}</div>
+                        ${item.sprite ? `<img src="${item.sprite}" style="width:64px; height:64px; image-rendering:pixelated; margin-bottom:10px;">` : ''}
+                        <div class="item-name">${item.name}</div>
+                        <div class="item-desc">${item.desc}</div>
+                    `;
 
                 grid.appendChild(card);
             });
@@ -2923,14 +2920,14 @@
             electric: "Elettro", psychic: "Psico", ice: "Ghiaccio", dragon: "Drago",
             dark: "Buio", fairy: "Folletto"
         };
-        
+
         // Cache per non riscaricare gli stessi dati dei tipi più volte
         const TYPE_CACHE = {};
 
         async function calculateTypeEffectiveness(pokemonTypes) {
             const allTypes = Object.keys(TYPE_TRANSLATIONS);
             const multipliers = {};
-            
+
             // Inizializziamo tutti i moltiplicatori a 1 (danno normale)
             allTypes.forEach(t => multipliers[t] = 1);
 
@@ -2965,23 +2962,23 @@
         /* -------------------------------------------------------------
            MODALE STATISTICHE (TASTO DESTRO)
            ------------------------------------------------------------- */
-async function openStatsModal(pokemon) {
+        async function openStatsModal(pokemon) {
             const modal = document.getElementById('statsModal');
             const content = document.getElementById('statsModalContent');
 
-            const maxStat = 255; 
+            const maxStat = 255;
 
             // Funzione per generare una singola barra colorata
             const renderBar = (label, val, color) => {
                 const pct = Math.min(100, (val / maxStat) * 100);
                 return `
-                <div class="stat-row-modal">
-                    <div class="stat-label-modal">${label}</div>
-                    <div class="stat-bar-bg-modal">
-                        <div class="stat-bar-fill-modal" style="width: ${pct}%; background: ${color};"></div>
-                    </div>
-                    <div class="stat-val-modal">${val}</div>
-                </div>`;
+                    <div class="stat-row-modal">
+                        <div class="stat-label-modal">${label}</div>
+                        <div class="stat-bar-bg-modal">
+                            <div class="stat-bar-fill-modal" style="width: ${pct}%; background: ${color};"></div>
+                        </div>
+                        <div class="stat-val-modal">${val}</div>
+                    </div>`;
             };
 
             // --- NUOVO: Creiamo le opzioni del menù a tendina per le abilità ---
@@ -2996,41 +2993,41 @@ async function openStatsModal(pokemon) {
 
             // HTML interno della finestra (Struttura base + Abilità + Statistiche)
             content.innerHTML = `
-                <div class="modal-header-stats">
-                    <img src="${pokemon.sprite}" alt="${pokemon.name}">
-                    <h3>${pokemon.name}</h3>
-                    <div class="pokemon-types" style="margin-top:5px;">
-                        ${pokemon.types.map(t => `<span class="type-badge" style="background: var(--type-${t}, #aaa); padding: 4px 8px;">${TYPE_TRANSLATIONS[t] ? TYPE_TRANSLATIONS[t].toUpperCase() : t.toUpperCase()}</span>`).join('')}
+                    <div class="modal-header-stats">
+                        <img src="${pokemon.sprite}" alt="${pokemon.name}">
+                        <h3>${pokemon.name}</h3>
+                        <div class="pokemon-types" style="margin-top:5px;">
+                            ${pokemon.types.map(t => `<span class="type-badge" style="background: var(--type-${t}, #aaa); padding: 4px 8px;">${TYPE_TRANSLATIONS[t] ? TYPE_TRANSLATIONS[t].toUpperCase() : t.toUpperCase()}</span>`).join('')}
+                        </div>
                     </div>
-                </div>
-                
-                <div style="margin-bottom: 15px; background: #f8fafc; padding: 10px; border-radius: 8px; border: 1px solid #e2e8f0;">
-                    <label style="font-weight: bold; font-size: 0.85em; color: #4a5568; display: block; margin-bottom: 5px;">ABILITÀ:</label>
-                    <select id="modalAbilitySelect" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #cbd5e0; margin-bottom: 8px; font-weight: bold; color: #2d3748; cursor: pointer;">
-                        ${abilityOptionsHtml}
-                    </select>
-                    <div id="modalAbilityDesc" style="font-size: 0.85em; color: #718096; font-style: italic; min-height: 40px; background: #fff; padding: 8px; border-radius: 4px; border: 1px dashed #cbd5e0;">
-                        Caricamento descrizione...
-                    </div>
-                </div>
 
-                <div style="padding: 10px 0;">
-                    ${renderBar('PS', pokemon.individualStats.hp, '#48bb78')}
-                    ${renderBar('Atk', pokemon.individualStats.atk, '#f56565')}
-                    ${renderBar('Dif', pokemon.individualStats.def, '#4299e1')}
-                    ${renderBar('SpA', pokemon.individualStats.spa, '#9f7aea')}
-                    ${renderBar('SpD', pokemon.individualStats.spd, '#ed64a6')}
-                    ${renderBar('Vel', pokemon.individualStats.spe, '#ed8936')}
-                </div>
-                <div style="text-align: right; margin-top: 5px; margin-bottom: 15px; font-weight: 900; font-size: 1.1em; color: #2c3e50;">
-                    BST: ${pokemon.bst}
-                </div>
-                
-                <div id="modal-type-effectiveness">
-                    <div style="text-align:center; color:#718096; font-size:0.9em;">Calcolo debolezze in corso...</div>
-                </div>
-            `;
-            
+                    <div style="margin-bottom: 15px; background: #f8fafc; padding: 10px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <label style="font-weight: bold; font-size: 0.85em; color: #4a5568; display: block; margin-bottom: 5px;">ABILITÀ:</label>
+                        <select id="modalAbilitySelect" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #cbd5e0; margin-bottom: 8px; font-weight: bold; color: #2d3748; cursor: pointer;">
+                            ${abilityOptionsHtml}
+                        </select>
+                        <div id="modalAbilityDesc" style="font-size: 0.85em; color: #718096; font-style: italic; min-height: 40px; background: #fff; padding: 8px; border-radius: 4px; border: 1px dashed #cbd5e0;">
+                            Caricamento descrizione...
+                        </div>
+                    </div>
+
+                    <div style="padding: 10px 0;">
+                        ${renderBar('PS', pokemon.individualStats.hp, '#48bb78')}
+                        ${renderBar('Atk', pokemon.individualStats.atk, '#f56565')}
+                        ${renderBar('Dif', pokemon.individualStats.def, '#4299e1')}
+                        ${renderBar('SpA', pokemon.individualStats.spa, '#9f7aea')}
+                        ${renderBar('SpD', pokemon.individualStats.spd, '#ed64a6')}
+                        ${renderBar('Vel', pokemon.individualStats.spe, '#ed8936')}
+                    </div>
+                    <div style="text-align: right; margin-top: 5px; margin-bottom: 15px; font-weight: 900; font-size: 1.1em; color: #2c3e50;">
+                        BST: ${pokemon.bst}
+                    </div>
+
+                    <div id="modal-type-effectiveness">
+                        <div style="text-align:center; color:#718096; font-size:0.9em;">Calcolo debolezze in corso...</div>
+                    </div>
+                `;
+
             modal.classList.add('active');
 
             // --- NUOVO: Gestione del caricamento descrizione abilità ---
@@ -3040,29 +3037,29 @@ async function openStatsModal(pokemon) {
             const loadAbilityDesc = async (index) => {
                 abilityDesc.innerHTML = "Caricamento descrizione...";
                 const ab = pokemon.abilities[index];
-                
+
                 if (!ab || ab.slug === '-') {
                     abilityDesc.innerHTML = "Nessuna abilità disponibile.";
                     return;
                 }
-                
+
                 try {
                     // Ottimizzazione: se abbiamo già scaricato questa descrizione, usiamo quella salvata
                     if (ab.desc) {
                         abilityDesc.innerHTML = ab.desc;
                         return;
                     }
-                    
+
                     // Altrimenti interroghiamo le API
                     const res = await fetch(`https://pokeapi.co/api/v2/ability/${ab.slug}`);
                     const data = await res.json();
-                    
+
                     // Cerchiamo il testo in italiano, altrimenti fallback su inglese
                     const entry = data.flavor_text_entries.find(f => f.language.name === 'it') || data.flavor_text_entries.find(f => f.language.name === 'en');
-                    
+
                     // Puliamo il testo dai ritorni a capo strani delle API
                     const descText = entry ? entry.flavor_text.replace(/[\n\f]/g, " ") : "Descrizione non disponibile.";
-                    
+
                     ab.desc = descText; // Salviamo la descrizione nell'oggetto Pokémon per non riscaricarla
                     abilityDesc.innerHTML = descText;
                 } catch (e) {
@@ -3078,13 +3075,13 @@ async function openStatsModal(pokemon) {
                 const newIndex = parseInt(e.target.value);
                 pokemon.currentAbilityIndex = newIndex; // Aggiorna il Pokémon
                 saveSession(); // Salva nel LocalStorage
-                
+
                 // Aggiorna le grafiche del team in background in modo che restino sincronizzate!
                 if (typeof updateTeamDisplay === 'function') updateTeamDisplay();
-                if (gamePhase === 'POKEMON' && typeof renderGrid === 'function') renderGrid(); 
-                
+                if (gamePhase === 'POKEMON' && typeof renderGrid === 'function') renderGrid();
+
                 // Carica la nuova descrizione
-                loadAbilityDesc(newIndex); 
+                loadAbilityDesc(newIndex);
             };
 
             // --- Calcolo debolezze ---
@@ -3093,16 +3090,16 @@ async function openStatsModal(pokemon) {
                 let effHtml = '';
 
                 const buildBox = (title, types, bgColor, textColor, borderColor) => {
-                    if (!types || types.length === 0) return ''; 
-                    
+                    if (!types || types.length === 0) return '';
+
                     const badges = types.map(t => `<span class="type-badge" style="background: var(--type-${t}, #aaa); padding: 3px 6px; font-size: 0.8em; margin-bottom: 4px;">${TYPE_TRANSLATIONS[t] ? TYPE_TRANSLATIONS[t].toUpperCase() : t.toUpperCase()}</span>`).join('');
-                    
+
                     return `
-                        <div style="background: ${bgColor}; border: 1px solid ${borderColor}; border-radius: 8px; padding: 10px; margin-bottom: 10px;">
-                            <div style="color: ${textColor}; font-weight: bold; font-size: 0.85em; margin-bottom: 8px; letter-spacing: 0.5px;">${title}</div>
-                            <div style="display: flex; flex-wrap: wrap; gap: 5px;">${badges}</div>
-                        </div>
-                    `;
+                            <div style="background: ${bgColor}; border: 1px solid ${borderColor}; border-radius: 8px; padding: 10px; margin-bottom: 10px;">
+                                <div style="color: ${textColor}; font-weight: bold; font-size: 0.85em; margin-bottom: 8px; letter-spacing: 0.5px;">${title}</div>
+                                <div style="display: flex; flex-wrap: wrap; gap: 5px;">${badges}</div>
+                            </div>
+                        `;
                 };
 
                 effHtml += buildBox('SUPER DEBOLE (X4)', eff.x4, '#fff5f5', '#c53030', '#feb2b2');
